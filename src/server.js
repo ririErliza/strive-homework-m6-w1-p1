@@ -1,7 +1,6 @@
 import express from 'express';
 import listEndpoints from 'express-list-endpoints'
-import usersRouter from './services/users/index.js';
-import authorsRouter from './services/users/index.js';
+import authorsRouter from './services/authors/index.js';
 import mongoose from 'mongoose';
 
 const server = express()
@@ -12,8 +11,8 @@ server.use(express.json()) // if you don't add this line BEFORE the endpoints, a
 
 // _____________ Endpoints ______________
 
-server.use("/users", usersRouter) // all the endpoints in the usersRouter will have http://localhost:3001/users as a URL
-server.use("/authors", authorsRouter)
+
+server.use("/authors", authorsRouter) // all the endpoints in the usersRouter will have http://localhost:3001/users as a URL
 // _____________ Database Connection ______________
 
 mongoose.connect("mongodb+srv://test:test@cluster0.4cpy1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
