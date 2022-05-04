@@ -30,14 +30,14 @@ authorsRouter.get("/", async (req,res)=>{
 
 //3.
 authorsRouter.get("/:id", async (req,res)=>{
-    const Author = await authorsModel.findById(req.params.AuthorId)
+    const Author = await authorsModel.findById(req.params.id)
     res.send(Author)
 })
 
 //4.
 authorsRouter.put("/:id", async (req,res)=>{
     const updatedAuthor = await authorsModel.findByIdAndUpdate(
-        req.params.AuthorId, // WHO
+        req.params.id, // WHO
         req.body, // HOW
         { new: true } // OPTIONS (if you want to obtain the updated Author you should specify new: true)
       )
@@ -46,7 +46,7 @@ authorsRouter.put("/:id", async (req,res)=>{
 
 //5.
 authorsRouter.delete("/:id", async (req,res)=>{
-    await authorsModel.findByIdAndDelete(req.params.AuthorId)
+    await authorsModel.findByIdAndDelete(req.params.id)
     res.status(204).send()
 })
 
