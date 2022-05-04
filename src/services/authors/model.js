@@ -1,0 +1,26 @@
+// In this file we define two Mongoose Objects: Schema, Model
+
+// Schema = shape of the data we gonna have in a certain collection
+// Model = functionalities, interactions with a specific collection (find, save, update, delete)
+
+import mongoose from "mongoose"
+
+const { Schema, model } = mongoose
+
+const usersSchema = new Schema(
+  {
+    _id: {type: String, required: true},
+    name: { type: String, required: true },
+    surname: { type: String, required: true },
+    email: { type: String, required: true },
+    dateOfBirth: { type: Date, required: true },
+    avatar: {type: String, required: false}
+  },
+  {
+    timestamps: true, // automatically add createdAt and updatedAt fields
+  }
+)
+
+export default model("Author", authorsSchema) // this is going to be connected to the users collection
+
+
