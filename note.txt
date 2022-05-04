@@ -41,3 +41,24 @@ Never FORGET at .gitignore
 .env
 
 ----------------------------------------------------------------------------------------------------------
+.env file should be at the same level as package.json
+otherwise it will throw error
+(happened before)
+----------------------------------------------------------------------------------------------------------
+
+at postman during post method, type like this:
+
+{
+    "name": "Kirana",
+    "surname": "KK",
+    "email": "kekeRin23@gmail.com",
+    "dateOfBirth": "1989-4-12",
+    "avatar": "https://ui-avatars.com/api/?name=John+Doe"
+}
+
+-----------------------------------------------------------------------------------------------------------
+at postman,
+be careful during PUT method
+it throw error when I accidentaly overwrite one of the object data,
+fix it by deleting one of them on mongoDB atlas
+----------------------------------------------------------------------------------------------------------
