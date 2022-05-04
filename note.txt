@@ -1,0 +1,35 @@
+//1.
+usersRouter.post()
+
+//2.
+usersRouter.get()
+
+//3.
+usersRouter.get()
+
+//4.
+usersRouter.put()
+
+//5.
+usersRouter.delete()
+
+------------------------------------------------------------
+
+//1.
+usersRouter.post("/", (req,res)=>{})
+---< (req, res) => {} is the ENDPOINT HANDLER. 
+Is the function that will be executed 
+every time a request on that endpoint is sent. 
+req and res are REQUEST and RESPONSE objects >---
+
+//2.
+usersRouter.get("/", (req,res)=>{})
+
+//3.
+usersRouter.get("/:id", (req,res)=>{})
+
+//4.
+usersRouter.put("/:id", (req,res)=>{})
+
+//5.
+usersRouter.delete("/:id", (req,res)=>{})
