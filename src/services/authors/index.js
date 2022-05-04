@@ -5,6 +5,7 @@
 // 5. DELETE 
 
 import express from "express";
+import authorsModel from "./model.js"
 
 
 const authorsRouter = express.Router()
@@ -22,13 +23,13 @@ authorsRouter.post("/", async (req,res)=>{
 })
 
 //2.
-authorsRouter.get("/", async (req,res)=>{
+authorsRouter.get("/123", async (req,res)=>{
     const authors = await authorsModel.find()
     res.send(authors)
 })
 
 //3.
-authorsRouter.get("/:id", async (req,res)=>{
+authorsRouter.get("/123/:id", async (req,res)=>{
     const Author = await authorsModel.findById(req.params.AuthorId)
     res.send(Author)
 })
@@ -44,7 +45,7 @@ authorsRouter.put("/:id", async (req,res)=>{
 })
 
 //5.
-authorsRouter.delete("/:id", async (req,res)=>{
+authorsRouter.delete("/123/:id", async (req,res)=>{
     await authorsModel.findByIdAndDelete(req.params.AuthorId)
     res.status(204).send()
 })

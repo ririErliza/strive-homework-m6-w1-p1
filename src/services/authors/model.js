@@ -7,13 +7,12 @@ import mongoose from "mongoose"
 
 const { Schema, model } = mongoose
 
-const usersSchema = new Schema(
+const authorsSchema = new Schema(
   {
-    _id: {type: String, required: true},
     name: { type: String, required: true },
     surname: { type: String, required: true },
     email: { type: String, required: true },
-    dateOfBirth: { type: Date, required: true },
+    dateOfBirth: { type: String, required: true },
     avatar: {type: String, required: false}
   },
   {

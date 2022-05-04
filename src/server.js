@@ -15,7 +15,7 @@ server.use(express.json()) // if you don't add this line BEFORE the endpoints, a
 server.use("/authors", authorsRouter) // all the endpoints in the usersRouter will have http://localhost:3001/users as a URL
 // _____________ Database Connection ______________
 
-mongoose.connect("mongodb+srv://test:test@cluster0.4cpy1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGO_CONNECTION_URL)
 
 mongoose.connection.on("connected", () => {
     console.log(`Connected to MongoDB`)
